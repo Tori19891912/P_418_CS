@@ -2,6 +2,9 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiINmsHvxQUoAFuwYxbRHH9zr
 
 TODO:
+1. Повторить конструкторы в курсе C++;
+
+DONE:
 1. В классе 'Point' написать метод ??? Disctance(???), 
    который возвращает расстояние до указанной точки;
 2. Перегрузить арифметические операторы в классе 'Point': +, -, *, /;
