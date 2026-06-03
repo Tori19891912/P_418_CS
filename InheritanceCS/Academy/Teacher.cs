@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-	class Teacher: AcademyMember
+	class Teacher : AcademyMember
 	{
 		public int Experience { get; set; }
 
@@ -18,11 +18,15 @@ namespace Academy
 		) : base(lastName, firstName, age, speciality)
 		{
 			this.Experience = experience;
-			Console.WriteLine($"TConstructor:\t{GetHashCode()}");
+#if DEBUG
+			Console.WriteLine($"TConstructor:\t{GetHashCode()}"); 
+#endif
 		}
 		~Teacher()
 		{
-			Console.WriteLine($"TDestructor:\t{GetHashCode()}");
+#if DEBUG
+			Console.WriteLine($"TDestructor:\t{GetHashCode()}"); 
+#endif
 		}
 
 		public override string ToString()
