@@ -7,43 +7,47 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-	class Human
-	{
-		public string LastName { get; set; }
-		public string FirstName { get; set; }
-		public int Age { get; set; }
-		public Human(string lastName, string firstName, int age)
-		{
-			LastName = lastName;
-			FirstName = firstName;
-			Age = age;
+    class Human
+    {
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public int Age { get; set; }
+        public Human(string lastName, string firstName, int age)
+        {
+            LastName = lastName;
+            FirstName = firstName;
+            Age = age;
 #if DEBUG
-			Console.WriteLine($"HConstructor:\t{GetHashCode()}"); 
+            Console.WriteLine($"HConstructor:\t{GetHashCode()}");
 #endif
-		}
-		public Human(Human other)
-		{
-			this.LastName = other.LastName;
-			this.FirstName = other.FirstName;
-			this.Age = other.Age;
-		}
-		~Human()
-		{
+        }
+        public Human(Human other)
+        {
+            this.LastName = other.LastName;
+            this.FirstName = other.FirstName;
+            this.Age = other.Age;
+        }
+        ~Human()
+        {
 #if DEBUG
-			Console.WriteLine($"HDestructor:\t{GetHashCode()}"); 
+            Console.WriteLine($"HDestructor:\t{GetHashCode()}");
 #endif
-		}
+        }
 
-		//				Methods:
-		public void Info()
-		{
-			Console.WriteLine($"{LastName} {FirstName} {Age}");
-		}
+        //				Methods:
+        public void Info()
+        {
+            Console.WriteLine($"{LastName.PadRight(12)} {FirstName.PadRight(12)} {Age.ToString().PadLeft(2).PadRight(3)}");
+        }
 
-		public override string ToString()
-		{
-			//return base.ToString();
-			return $"{LastName} {FirstName} {Age}";
-		}
-	}
+        public override string ToString()
+        {
+            //return base.ToString();
+            return $"{LastName.PadRight(12)} {FirstName.PadRight(12)} {Age.ToString().PadLeft(2).PadRight(3)}";
+        }
+        public virtual string ToFileString()
+        {
+            return $"{this.GetType().ToString().Split('.').Last()}:{LastName},{FirstName},{Age}";
+        }
+    }
 }
