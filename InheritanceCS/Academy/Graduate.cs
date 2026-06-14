@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Academy
 {
-    class Graduate : Student
+    class Graduate : Streamer
     {
         public string Subject { get; set; }
         public Graduate
@@ -21,7 +21,7 @@ namespace Academy
             Console.WriteLine($"GConstructor:\t{GetHashCode()}");
 #endif
         }
-        public Graduate(Student student, string subject) : base(student)
+        public Graduate(Streamer student, string subject) : base(student)
         {
             this.Subject = subject;
         }

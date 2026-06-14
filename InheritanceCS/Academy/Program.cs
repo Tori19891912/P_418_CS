@@ -1,6 +1,8 @@
 ﻿//#define INHERITANCE_PART_1
 //#define INHERITANCE_PART_2
-#define WRITE_TOFILE
+//#define WRITE_TO_FILE
+#define READ_FROM_FILE
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,38 +53,26 @@ namespace Academy
 			Console.WriteLine(graduate);
 #endif
 
-#if WRITE_TOFILE
-            //1) Upcast:
-            Human[] group = new Human[]
-            {
-                new Student("Vercetty", "Tommy", 30, "Auto", "Vice", 91, 98),
-                new Teacher("Diaz", "Ricardo", 45, "Weapons distribution", 20),
-                new Graduate("Rosenberg", "Ken", 35, "Law", "Vice", 32, 25, "How to make money"),
-                new Teacher("Colonel", "Cortez", 50, "Weapons distribution", 25)
-            };
-            Print(group);
-            Save(group, "group.csv");
+#if WRITE_TO_FILE
+			//1) Upcast:
+			Human[] group = new Human[]
+			{
+				new Student("Vercetty", "Tommy", 30, "Auto", "Vice", 91, 98),
+				new Teacher("Diaz", "Ricardo", 45, "Weapons distribution", 20),
+				new Graduate("Rosenberg", "Ken", 35, "Law", "Vice", 32, 25, "How to make money"),
+				new Teacher("Colonel", "Cortez", 50, "Weapons distribution", 25)
+			};
+			Streamer streamer = new Streamer();
+			streamer.Print(group);
+			streamer.Save(group, "group.csv");
 #endif
+
+#if READ_FROM_FILE
+            Streamer streamer = new Streamer();
+            Human[] group = streamer.Load("group.csv");
+            streamer.Print(group);
+#endif
+
         }
-        static void Print(Human[] group)
-        {
-            for (int i = 0; i < group.Length; i++)
-            {
-                Console.WriteLine(group[i]);
-            }
-        }
-        static void Save(Human[] group, string filename)
-        { 
-             Directory.SetCurrentDirectory($"{Application.ExecutablePath}\\..\\..\\..");
-            Console.WriteLine(Directory.GetCurrentDirectory());
-            //string filename = "group.csv";
-            StreamWriter writer = new StreamWriter(filename);
-            foreach (Human h in group)
-            {
-                writer.WriteLine(h.ToFileString() + ";");
-            }
-            writer.Close();
-            Process.Start("notepad", filename);//CSV - Comma-Separated Values (Значения, разделенные запятыми);
-        }                                    //https://ru.wikipedia.org/wiki/CSV
     }
 }

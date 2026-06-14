@@ -27,6 +27,7 @@ namespace Academy
 		}
 		~AcademyMember()
 		{
+			this.Speciality = null;
 		}
 
 		public override string ToString()

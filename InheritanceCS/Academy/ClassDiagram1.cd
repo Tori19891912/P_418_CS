@@ -3,7 +3,7 @@
   <Class Name="Academy.Human">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAEAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAEAEAAAAAAAAAAAAQAAAAAAEAAAAg=</HashCode>
       <FileName>Human.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -11,7 +11,7 @@
     <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAEAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>Student.cs</FileName>
+      <FileName>Streamer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Academy.Teacher">
