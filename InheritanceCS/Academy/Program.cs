@@ -1,7 +1,7 @@
 ﻿//#define INHERITANCE_PART_1
 //#define INHERITANCE_PART_2
 //#define WRITE_TO_FILE
-#define READ_FROM_FILE
+//#define READ_FROM_FILE
 
 using System;
 using System.Collections.Generic;
